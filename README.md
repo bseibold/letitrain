@@ -49,6 +49,8 @@ The board can be used with ESPHome, see [esphome.yaml](esphome.yaml) for an exam
 
 Optional pin headers are omitted. They are intended for later reuse of spare PCBs.
 
+The enclosure is an RL6115 from Hammond Manufacturing.
+
 ## Changelog
 
 ### Version 1.1
