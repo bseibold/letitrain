@@ -1,0 +1,97 @@
+external_components:
+  source: github://bseibold/esphome-components@main
+
+esphome:
+  name: regentonne
+
+esp32:
+  board: esp32dev 
+  flash_size: 8MB
+  framework:
+    type: arduino
+
+api:
+  password: ""
+
+wifi:
+  <<: !include wifi.yaml
+
+captive_portal:
+
+ota:
+  - platform: esphome
+    password: ""
+
+web_server:
+  version: 3
+  ota: false
+  include_internal: true
+    
+i2c:
+  sda: GPIO21
+  scl: GPIO22
+  scan: false
+
+power_supply:
+  - id: sensor_power
+    pin: GPIO4
+    enable_time: 150ms
+    keep_on_time: 50ms
+    enable_on_boot: true
+
+sensor:
+  - platform: mcp3421
+    id: adc_level_raw
+    update_interval: 60s
+    name: Level Sensor Raw
+    entity_category: "diagnostic"
+    internal: true
+    sample_width: 18
+    continuous: true
+    filters:
+      - skip_initial: 1
+
+  - platform: copy
+    id: adc_level
+    source_id: adc_level_raw
+    name: "Rain Barrel Level"
+    unit_of_measurement: "%"
+    device_class: volume
+    icon: "mdi:watering-can"
+    entity_category: ""
+    accuracy_decimals: 2
+    filters:
+      - clamp:
+          min_value: 0.40
+          max_value: 2.00
+          ignore_out_of_range: true
+      - calibrate_linear:
+          datapoints:
+            - 0.43 -> 0.0
+            - 1.55 -> 100.0
+      - clamp:
+          min_value: 0.0
+          max_value: 100.0
+      - round: 2
+
+  - platform: adc
+    pin: GPIO33
+    id: adc_12v
+    name: Supply Voltage
+    icon: "mdi:sine-wave"
+    entity_category: "diagnostic"
+    update_interval: 60s
+    attenuation: 12db
+    filters:
+      multiply: 5.7
+
+  - platform: adc
+    pin: GPIO34
+    id: adc_vsens
+    name: "Fault Detection Voltage"
+    icon: "mdi:sine-wave"
+    entity_category: "diagnostic"
+    update_interval: 60s
+    attenuation: 12db
+    filters:
+      multiply: 5.7

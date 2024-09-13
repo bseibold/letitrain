@@ -16,6 +16,10 @@ of a short-circuit. The bias current of the op-amp has a small but measureable e
 however the voltage measured by the ADC is still very linear to the current through the
 sensor.
 
+## Software
+
+The board can be used with ESPHome, see [esphome.yaml](esphome.yaml) for an example configuration.
+
 ## BOM
 
  - 1x TL-136 differential pressure level sensor
