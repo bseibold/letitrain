@@ -2554,24 +2554,25 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "U"
-				(at -6.35 6.35 0)
+			(property "Reference" "U1"
+				(at -8.89 1.2701 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify right)
 				)
 			)
-			(property "Value" "MCP9700x-ELT"
-				(at 1.27 6.35 0)
+			(property "Value" "MCP9700B"
+				(at -8.89 -1.2699 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
+					(justify right)
 				)
 			)
-			(property "Footprint" "Package_TO_SOT_SMD:SOT-353_SC-70-5"
+			(property "Footprint" "Package_TO_SOT_SMD:SOT-23_Handsoldering"
 				(at 0 -10.16 0)
 				(effects
 					(font
@@ -2748,10 +2749,10 @@
 				)
 			)
 			(symbol "MCP9700x-ELT_1_1"
-				(pin no_connect line
-					(at 7.62 -2.54 180)
-					(length 2.54) hide
-					(name "NC"
+				(pin power_in line
+					(at 0 7.62 270)
+					(length 2.54)
+					(name "V_{DD}"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2759,24 +2760,6 @@
 						)
 					)
 					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 0 -7.62 90)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2794,7 +2777,7 @@
 							)
 						)
 					)
-					(number "3"
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2803,34 +2786,16 @@
 					)
 				)
 				(pin power_in line
-					(at 0 7.62 270)
+					(at 0 -7.62 90)
 					(length 2.54)
-					(name "V_{DD}"
+					(name "GND"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin no_connect line
-					(at 7.62 2.54 180)
-					(length 2.54) hide
-					(name "NC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -6141,7 +6106,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "4a524bda-7a6b-4603-b2f6-d731569b618a")
 		(property "Reference" "J2"
@@ -7169,7 +7134,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "7fd4c0a6-5eac-48b4-8fe8-2c837b1ba1e6")
 		(property "Reference" "R16"
@@ -7854,7 +7819,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "a295d46e-1ef0-4061-bf3b-96caa53a98d4")
 		(property "Reference" "J8"
@@ -8256,7 +8221,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "c56e4c46-0a17-4502-9744-d2c2e499f9ac")
 		(property "Reference" "U1"
@@ -8268,7 +8233,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "MCP9701"
+		(property "Value" "MCP9700B"
 			(at 85.09 125.7299 0)
 			(effects
 				(font
@@ -8277,7 +8242,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-353_SC-70-5"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23_Handsoldering"
 			(at 93.98 134.62 0)
 			(effects
 				(font
@@ -8304,17 +8269,11 @@
 				(hide yes)
 			)
 		)
-		(pin "5"
-			(uuid "86af2a75-d10e-4d3b-8628-a5a09bfe3ecd")
-		)
 		(pin "1"
 			(uuid "3d2d5073-950a-4f0f-96fd-c3593c4f27db")
 		)
 		(pin "3"
 			(uuid "d3d70092-ef40-4fd5-8422-33ad49ff15fa")
-		)
-		(pin "4"
-			(uuid "b047bfa6-0b54-46dd-b4ca-84c379f12dfb")
 		)
 		(pin "2"
 			(uuid "21577043-e5d8-43cf-972e-44d8b5fba713")
@@ -8336,7 +8295,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "c5a1cbb9-a027-40e2-b9a3-b523c5c6db6d")
 		(property "Reference" "J5"
@@ -8406,7 +8365,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C_Polarized")
+		(lib_id "Device:C")
 		(at 99.06 177.8 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8416,7 +8375,7 @@
 		(fields_autoplaced yes)
 		(uuid "c66fe4f4-640a-4059-bfc0-735c9dbb8ffd")
 		(property "Reference" "C9"
-			(at 102.87 175.6409 0)
+			(at 102.87 176.5299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8425,7 +8384,7 @@
 			)
 		)
 		(property "Value" "10u"
-			(at 102.87 178.1809 0)
+			(at 102.87 179.0699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8451,7 +8410,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Polarized capacitor"
+		(property "Description" "Unpolarized capacitor"
 			(at 99.06 177.8 0)
 			(effects
 				(font
@@ -8549,7 +8508,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "cbd79517-5c1a-4735-8fa1-ecdf6aa020c1")
 		(property "Reference" "J9"
@@ -8614,15 +8573,15 @@
 	)
 	(symbol
 		(lib_id "Device:D_TVS")
-		(at 64.77 76.2 90)
+		(at 64.77 76.2 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "d158c39e-c120-455c-9493-92bd937e4d24")
 		(property "Reference" "D1"
-			(at 67.31 74.9299 90)
+			(at 62.23 77.4701 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8631,7 +8590,7 @@
 			)
 		)
 		(property "Value" "P4SMAJ30CA"
-			(at 67.31 77.4699 90)
+			(at 62.23 74.9301 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9545,7 +9504,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "ff34dd6d-54c7-4f9e-8835-ec49774ab764")
 		(property "Reference" "J1"
